@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order</title>
+  <link rel="stylesheet" href="../FinalCodeQuest/order.css">
+</head>
+<body>
+  <header>
+    <img class="logoimage" src="./resources/images/logo.png"/>
+    <nav>
+      <ul>
+        <li><a href="./landing.html">Home</a></li>
+        <li><a href="./order.html">Order</a></li>
+        <li><a href="./order_summary.html">Summary</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="pre-container">
+    <h1>Order Your Choice</h1>
+  </div>
+
+  <div class="order-container">
+
+    <!-- Bagian Produk -->
+    <div class="productlist-section">
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="./resources/images/keyboardx100.webp" alt="Keyboard">
+          <h3>Mechanical Keyboard X100</h3>
+          <p>Rp 768.999</p>
+          <button onclick="addToCart('product', 'keyboard', 'Mechanical Keyboard X100', 768999)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="./resources/images/mousez5.jpeg" alt="Mouse">
+          <h3>ProGaming Mouse Z5</h3>
+          <p>Rp 245.999</p>
+          <button onclick="addToCart('product', 'mouse', 'ProGaming Mouse Z5', 245999)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="../FinalCodeQuest/resources/images/controllerxg56.jpg" alt="Controller">
+          <h3>Game Controller Rosewerk V</h3>
+          <p>Rp 370.000</p>
+          <button onclick="addToCart('product', 'controller', 'Game Controller Rosewerk V', 370000)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="../FinalCodeQuest/resources/images/controllerxg56.jpg" alt="Controller">
+          <h3>Game Controller Rosewerk V</h3>
+          <p>Rp 370.000</p>
+          <button onclick="addToCart('product', 'controller', 'Game Controller Rosewerk V', 370000)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="../FinalCodeQuest/resources/images/controllerxg56.jpg" alt="Controller">
+          <h3>Game Controller Rosewerk V</h3>
+          <p>Rp 370.000</p>
+          <button onclick="addToCart('product', 'controller', 'Game Controller Rosewerk V', 370000)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="../FinalCodeQuest/resources/images/controllerxg56.jpg" alt="Controller">
+          <h3>Game Controller Rosewerk V</h3>
+          <p>Rp 370.000</p>
+          <button onclick="addToCart('product', 'controller', 'Game Controller Rosewerk V', 370000)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bagian Add-ons -->
+    <div class="addon-section">
+      <h2>Add-ons</h2>
+      <div class="addons-grid">
+        <div class="addon-item">
+          <input type="checkbox" onchange="toggleAddon(this, 'addon1', 'Steelseries Arctics', 520000)">
+          <img src="./resources/images/arctics.jpg" alt="Headset">
+          <div class="addon-info">
+            <span>Steelseries Arctics</span>
+            <span>Rp 520.000</span>
+          </div>
+        </div>
+        <div class="addon-item">
+          <input type="checkbox" onchange="toggleAddon(this, 'addon2', 'Gaming Chair M23', 1340000)">
+          <img src="../FinalCodeQuest/resources/images/chair.png" alt="Chair">
+          <div class="addon-info">
+            <span>Gaming Chair M23</span>
+            <span>Rp 1.340.000</span>
+          </div>
+        </div>
+        <div class="addon-item">
+          <input type="checkbox" onchange="toggleAddon(this, 'addon3', 'Desk Mat Liing K90', 90000)">
+          <img src="../FinalCodeQuest/resources/images/chair.png" alt="Desk Mat">
+          <div class="addon-info">
+            <span>Desk Mat Liing K90</span>
+            <span>Rp 90.000</span>
+          </div>
+        </div>
+        <div class="addon-item">
+          <input type="checkbox" onchange="toggleAddon(this, 'addon3', 'Desk Mat Liing K90', 90000)">
+          <img src="../FinalCodeQuest/resources/images/chair.png" alt="Desk Mat">
+          <div class="addon-info">
+            <span>Desk Mat Liing K90</span>
+            <span>Rp 90.000</span>
+          </div>
+        </div>
+        <div class="addon-item">
+          <input type="checkbox" onchange="toggleAddon(this, 'addon3', 'Desk Mat Liing K90', 90000)">
+          <img src="../FinalCodeQuest/resources/images/chair.png" alt="Desk Mat">
+          <div class="addon-info">
+            <span>Desk Mat Liing K90</span>
+            <span>Rp 90.000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Keranjang -->
+    <div class="cart">
+      <h2>Your Cart</h2>
+
+      <div class="section-title" style="font-weight: bolder;">Products:</div>
+      <div class="cart-products" id="cartProducts">
+        <p style="font-style:italic">No products selected.</p>
+      </div>
+
+      <div class="section-title" style="font-weight: bolder;">Add-ons:</div>
+      <div class="cart-addons" id="cartAddons">
+        <p style="font-style:italic">No add-ons selected.</p>
+      </div>
+
+      <div class="cart-total" id="cartTotal">Total: Rp 0</div>
+
+      <button class="resetitem-btn" id="resetcart">Clear Cart</button>
+      <a href="./order_summary.html"><button class="checkout-btn">Ke Summary</button></a>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function addToCart(type, id, name, price) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ type, id, name, price });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateOrderSummary();
+    }
+
+    function toggleAddon(checkbox, id, name, price) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      if (checkbox.checked) {
+        cart.push({ type: 'addon', id, name, price });
+      } else {
+        cart = cart.filter(item => item.id !== id);
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateOrderSummary();
+    }
+
+    function updateOrderSummary() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const productContainer = document.getElementById('cartProducts');
+      const addonContainer = document.getElementById('cartAddons');
+      const cartTotal = document.getElementById('cartTotal');
+
+      const productItems = cart.filter(item => item.type === 'product');
+      const addonItems = cart.filter(item => item.type === 'addon');
+
+      productContainer.innerHTML = productItems.length ?
+        productItems.map(item => `<p>${item.name}: Rp ${formatRupiah(item.price)}</p>`).join('') :
+        '<p style="font-style:italic">No products selected.</p>';
+
+      addonContainer.innerHTML = addonItems.length ?
+        addonItems.map(item => `<p>${item.name}: Rp ${formatRupiah(item.price)}</p>`).join('') :
+        '<p style="font-style:italic">No add-ons selected.</p>';
+
+      const total = cart.reduce((sum, item) => sum + item.price, 0);
+      cartTotal.textContent = `Total: Rp ${formatRupiah(total)}`;
+    }
+
+    function formatRupiah(amount) {
+      return amount.toLocaleString('id-ID');
+    }
+
+    document.getElementById('resetcart').addEventListener('click', () => {
+      localStorage.removeItem('cart');
+      updateOrderSummary();
+      document.querySelectorAll('.addon-item input').forEach(cb => cb.checked = false);
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      updateOrderSummary();
+    });
+  </script>
+</body>
+</html>

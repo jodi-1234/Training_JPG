@@ -1,0 +1,239 @@
+/* Reset dan Body */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  background: black;
+}
+
+/* Logo */
+.logoimage {
+  width: 100px;
+}
+
+/* Navbar */
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 20px;
+  padding: 10px;
+}
+
+nav a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+nav a:hover {
+  color: orange;
+}
+
+/* Hero Section */
+.hero {
+  background-color: rgb(225, 225, 225);
+  padding: 60px 20px;
+  color: #fff;
+  text-align: center;
+  height: 750px;
+}
+
+.iconSectionHero {
+    margin: 50px;
+}
+
+.hero h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: rgb(34, 34, 34);
+}
+
+.hero p {
+  font-size: 25px;
+  margin-bottom: 20px;
+  color: rgb(34, 34, 34);
+}
+
+.specialBtn button {
+  background-color: orange;
+  margin: 30px;
+  font-weight: bolder;
+  color: #000;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.specialBtn button:hover {
+  background-color: orangered;
+}
+
+/* About Section */
+.about {
+  background-color: orange;
+  padding: 40px 20px;
+  height: 750px;
+  color: black;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertikal tengah */
+  align-items: center;     /* Horizontal tengah */
+}
+
+.about h2 {
+    font-size: 70px;
+}
+
+.about p {
+    font-size: 30px;
+}
+
+/* Featured Section */
+.featured {
+  background-color: #333;
+  color: #fff;
+  padding: 60px 20px;
+  min-height: 750px;
+  text-align: center;
+}
+
+.featured h2 {
+  margin-bottom: 40px;
+  font-size: 60px;
+}
+
+/* Container tiap produk */
+.highlightproduct {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+/* Styling gambar produk */
+.imgproduct {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+}
+
+.imgproduct img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Styling teks produk */
+.highlightproduct article {
+  max-width: 400px;
+  text-align: left;
+}
+
+.highlightproduct h3 {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+.highlightproduct p {
+  font-size: 25px;
+  line-height: 1.6;
+}
+
+/* Animasi Warna RGB */
+@keyframes rgbText {
+  0% { color: #FFF78A; }
+  33% { color: #FFE382; }
+  66% { color: #FFC47E; }
+  100% { color: #FFAD84; }
+}
+
+.rgb-animate {
+  animation: rgbText 2s infinite;
+  font-weight: bold;
+}
+
+
+/* Testimonials Section*/
+.testimoni {
+  background-color: orange;
+  color: black;
+  height: 750px;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  text-align: center;
+}
+
+.testimoni h2 {
+    font-size: 60px;
+}
+
+.testimonials-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.testimonials-grid blockquote {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  max-width: 700px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  font-style: italic;
+  line-height: 1.6;
+  color: black;
+  font-size: 30px;
+}
+
+.testimonials-grid blockquote div {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+
+/* Footer Section */
+.footer {
+  background-color: #111; /* warna gelap footer */
+  color: #ccc; /* warna teks abu-abu terang */
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+/* Biar spacing lebih enak dilihat */
+.footer p {
+  margin: 8px 0;
+}

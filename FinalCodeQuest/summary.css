@@ -1,0 +1,196 @@
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Warna utama */
+:root {
+  --primary: orange;
+  --dark: #333;
+  --light: #f9f9f9;
+}
+
+/* Body style */
+body {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+/* Header */
+header {
+  background-color: black;
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoimage {
+  width: 100px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: var(--primary);
+}
+
+/* Container Utama */
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Formulir Customer */
+.customer-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+/* Tombol Submit */
+.submit-btn {
+  background-color: var(--primary);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: darkorange;
+}
+
+/* Invoice */
+.invoice-container {
+  display: none;
+  margin-top: 30px;
+}
+
+/* Header Invoice */
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.invoice-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.invoice-details div {
+  text-align: right;
+  font-size: 14px;
+}
+
+/* Isi Invoice */
+.invoice-body {
+  margin-top: 20px;
+}
+
+/* Tabel Order */
+.order-items {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.order-items th,
+.order-items td {
+  padding: 12px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+.order-items th {
+  background-color: var(--light);
+  font-weight: bold;
+}
+
+.order-items .text-right {
+  text-align: right;
+}
+
+/* Baris Total */
+.total-row td {
+  font-weight: bold;
+}
+
+/* Footer Invoice */
+.invoice-footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* Tombol Cetak */
+.print-btn {
+  background-color: var(--primary);
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: transform 0.2s;
+}
+
+.print-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .invoice-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

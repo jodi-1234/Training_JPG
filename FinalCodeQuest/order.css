@@ -1,0 +1,203 @@
+/* Reset dan Body */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  background: black;
+}
+
+/* Logo */
+.logoimage {
+  width: 100px;
+}
+
+/* Navbar */
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 20px;
+  padding: 10px;
+}
+
+nav a {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: orange;
+}
+
+/* Isi Halaman */
+/* Container Utama */
+.order-container {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  align-items: flex-start;
+}
+
+/* --- Product Section --- */
+.productlist-section {
+  flex: 2;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.product-card p {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.product-card button {
+  padding: 8px 14px;
+  background-color: #ffa500;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/* --- Add-ons Section --- */
+.addon-section {
+  flex: 1;
+}
+
+.addon-section h2 {
+  margin-bottom: 20px;
+}
+
+.addon-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fafafa;
+  transition: transform 0.3s;
+}
+
+.addon-item:hover {
+  transform: scale(1.03);
+}
+
+.addon-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.addon-item label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+/* --- Cart Section --- */
+.cart {
+  flex: 1;
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 12px;
+  max-height: 100%;
+}
+
+.cart h2 {
+  margin-bottom: 15px;
+}
+
+.cart-section-title {
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  text-decoration: underline;
+}
+
+.cart-items {
+  margin-bottom: 20px;
+}
+
+.cart-total {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.resetitem-btn,
+.checkout-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.resetitem-btn {
+  background-color: yellow;
+  margin-bottom: 10px;
+}
+
+.checkout-btn {
+  background-color: royalblue;
+  color: white;
+}
+
+/* --- Header Title --- */
+.pre-container h1 {
+  text-align: center;
+  font-size: 45px;
+  margin: 40px;
+}
+
+
+
